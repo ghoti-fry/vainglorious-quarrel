@@ -53,6 +53,6 @@ def bargain_calculator(weight):
     cheapest_option = "Premium ground shipping is the cheapest option "
     return cheapest_option + "at $" + str(premium_ground)
 
-#print(bargain_calculator(4.8))
-#print(bargain_calculator(41.5))
-#print(bargain_calculator(2.8))
+print(bargain_calculator(4.8))
+print(bargain_calculator(41.5))
+print(bargain_calculator(2.8))
