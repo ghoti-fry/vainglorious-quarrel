@@ -1,3 +1,3 @@
 # vainglorious-quarrel
 
-# Download the Games / Pong file to get access to the source code for Pong
+# View the Pong file in Games to get access to the source code for Pong
