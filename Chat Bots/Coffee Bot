@@ -1,12 +1,29 @@
 # Define your functions
 def coffee_bot():
     print('Welcome to the cafe!')
+    
+    order_drink = 'y'
+    drinks = []
+    
+    while order_drink == 'y':
+        size = get_size()
+        drink_type = get_drink_type()
+        
+        drink = '{} {}'.format(size, drink_type)
+        print('Alright, that\'s a {}!'.format(drink))
+        drinks.append(drink)
+        
+        extra_options()
+        
+        while True:
+            order_drink = input('Would you like to order another drink? (y/n) \n> ')
+            if order_drink in ['y', 'n']:
+                break
 
-    size = get_size()
-    drink_type = get_drink_type()
-    print('Alright, that\'s a {} {}!'.format(size, drink_type))
-
-    extra_options()
+    print('Okay, so I have:')
+    
+    for drink in drinks:
+        print('-', drink)
 
     name = input('Can I get your name please? \n> ')
     print('Thanks, {}! Your drink will be ready shortly.'.format(name))
