@@ -21,7 +21,7 @@ def get_drink_type():
     if res == 'a':
         return order_brewed()
     elif res == 'b':
-        return 'mocha'
+        return order_mocha()
     elif res == 'c':
         return order_latte()
     else:
@@ -63,6 +63,15 @@ def order_latte():
     else:
         print_message()
         return order_latte()
+
+def order_mocha():
+  while True:
+    res = input('Would you like to try our limited-edition peppermint mocha? \n[a] Sure! \n[b] Maybe next time! \n> ')
+    if res == 'a':
+      return 'peppermint mocha'
+    elif res == 'b':
+      return 'mocha'
+    print_message()
 
 # Function that clarifies what size drink the customer wants
 def get_size():
