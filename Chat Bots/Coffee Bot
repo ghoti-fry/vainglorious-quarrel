@@ -80,7 +80,8 @@ def order_latte():
     else:
         print_message()
         return order_latte()
-
+        
+# Function that asks if the user wants the specialty mocha
 def order_mocha():
   while True:
     res = input('Would you like to try our limited-edition peppermint mocha? \n[a] Sure! \n[b] Maybe next time! \n> ')
