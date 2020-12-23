@@ -11,11 +11,11 @@ def coffee_bot():
     name = input('Can I get your name please? \n> ')
     print('Thanks, {}! Your drink will be ready shortly.'.format(name))
 
-
+# Message to be displayed in the event the user presses an invalid choice
 def print_message():
     print("I'm sorry, I did not understand your selection. Please enter the corresponding letter for your response.")
 
-
+# Function that selects the drink type
 def get_drink_type():
     res = input('What type of drink would you like? \n[a] Brewed Coffee \n[b] Mocha \n[c] Latte \n> ')
     if res == 'a':
@@ -28,7 +28,7 @@ def get_drink_type():
         print_message()
         return get_drink_type()
 
-
+# Function that adds a choice of cup type at the end of the order
 def extra_options():
     res = input('Would you like a plastic cup or did you bring your own reusable cup? \n[a] I\'ll need a cup. \n[b] '
                 'Brought my own! \n> ')
@@ -40,7 +40,7 @@ def extra_options():
         print_message()
         return extra_options()
 
-
+# Function that specifies what kind of brewed coffee the customer wants
 def order_brewed():
     res = input('Would you like that hot or iced? \n[a] Hot \n[b] Iced \n> ')
     if res == 'a':
@@ -51,7 +51,7 @@ def order_brewed():
         print_message()
         return order_brewed()
 
-
+# Function that specifies what kind of milk they want with the latte
 def order_latte():
     res = input('And what kind of milk for your latte? \n[a] 2% milk \n[b] Non-fat milk \n[c] Soy milk \n> ')
     if res == 'a':
@@ -64,7 +64,7 @@ def order_latte():
         print_message()
         return order_latte()
 
-
+# Function that clarifies what size drink the customer wants
 def get_size():
     res = input('What size drink can I get for you? \n[a] Small \n[b] Medium \n[c] Large \n> ')
     if res == 'a':
