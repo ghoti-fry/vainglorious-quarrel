@@ -91,7 +91,7 @@ def quit_game():
     sys.exit()
     
 
-# Setting up and formatting the 3 buttons the user can select from
+# Setting up and formatting the 4 buttons the user can select from
 button1 = tk.Button(text = "Rock", width = 10, bg = "skyblue", command = rock)
 button1.grid(column = 0, row = 1)
 
