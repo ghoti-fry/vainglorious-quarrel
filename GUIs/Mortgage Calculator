@@ -1,0 +1,100 @@
+# Mortgage Calculator 1.0 by ghoti_fry
+
+# Import modules
+from tkinter import *
+from tkinter import ttk
+
+# Initialize the GUI parameters
+window = Tk()
+window.title("Mortgage Calculator")
+window.geometry("500x250")
+
+# Adding tab buttons for the two ways to view mortgage amounts
+tab_control = ttk.Notebook(window)
+tab1 = ttk.Frame(tab_control)
+tab2 = ttk.Frame(tab_control)
+tab_control.add(tab1, text = "Monthly cost")
+tab_control.add(tab2, text = "Maximum loan")
+tab_control.pack(expand = 1, fill = "both")
+
+
+# Tab 1 labels/entries
+# Mortgage amount and entry field with 100k set as default
+mtg_amt = Label(tab1, text = "Mortgage amount ($)", font = ("Arial", 10))
+mtg_amt.grid(column = 0, row = 0, sticky = "w", pady = 5)
+
+mtg_amt_ent = Entry(tab1, width = 15)
+mtg_amt_ent.insert(END, "100000")
+mtg_amt_ent.grid(column = 0, row = 1, sticky = "w")
+mtg_amt_ent.focus()
+
+# Interest rate and entry field with 3.04% set as default
+int_rate = Label(tab1, text = "Interest Rate (%)", font = ("Arial", 10))
+int_rate.grid(column = 0, row = 2, sticky = "w", pady = 5)
+
+int_rate_ent = Entry(tab1, width = 15)
+int_rate_ent.insert(END, "3.04")
+int_rate_ent.grid(column = 0, row = 3, sticky ="w")
+
+# Mortgage period label
+mtg_length = Label(tab1, text = "Mortgage period (years)", font = ("Arial", 10))
+mtg_length.grid(column = 0, row = 4, sticky = "w", pady = 5)
+
+# Creating a dropdown box for the possible mortgage periods
+YEARS = [10, 15, 20, 25, 30, 40]
+
+yr_option = StringVar(tab1)
+yr_option.set(YEARS[4])
+
+period = OptionMenu(tab1, yr_option, *YEARS)
+period.grid(column = 0, row = 5, sticky = "w")
+
+# Label that will display the total cost of the mortgage after being calculated
+total_cost = Label(tab1, text = "Total cost of mortgage: ", font = ("Arial Bold", 12))
+total_cost.grid(column = 1, row = 2, padx = 15)
+
+# Label that will display the amount paid per month after being calculated
+monthly_pay = Label(tab1, text = "Monthly payments: ", font = ("Arial Bold", 12))
+monthly_pay.grid(column = 1, row = 4, padx = 15)
+
+# The button the user clicks to calculate the cost/monthly payments
+calculate_btn = Button(tab1, text = "Calculate", bg = "red", fg = "white", font = ("Arial", 15))
+calculate_btn.grid(column = 0, row = 6, sticky = "w", pady = 10)
+
+# Tab 2 labels/entries
+# Monthly payment label/entry field with $500/month as default
+month_amt = Label(tab2, text = "Monthly payments ($)", font = ("Arial", 10))
+month_amt.grid(column = 0, row = 0,  sticky = "w", pady = 5)
+
+month_amt_ent = Entry(tab2, width = 15)
+month_amt_ent.insert(END, "500")
+month_amt_ent.grid(column = 0, row = 1, sticky = "w")
+month_amt_ent.focus()
+
+# Interest rate and entry field with 3.04% set as default
+int_rate = Label(tab2, text = "Interest Rate (%)", font = ("Arial", 10))
+int_rate.grid(column = 0, row = 2, sticky = "w", pady = 5)
+
+int_rate_ent = Entry(tab2, width = 15)
+int_rate_ent.insert(END, "3.04")
+int_rate_ent.grid(column = 0, row = 3, sticky ="w")
+
+# Mortgage period label and dropdown box from earlier
+mtg_length = Label(tab2, text = "Mortgage period (years)", font = ("Arial", 10))
+mtg_length.grid(column = 0, row = 4, sticky = "w", pady = 5)
+period = OptionMenu(tab2, yr_option, *YEARS)
+period.grid(column = 0, row = 5, sticky = "w")
+
+# Label that will display the total cost of the mortgage after being calculated
+total_cost = Label(tab2, text = "Total cost of mortgage: ", font = ("Arial Bold", 12))
+total_cost.grid(column = 1, row = 2, padx = 15)
+
+# Label that will display how much the user could borrow given the parameters after calculation
+brrw_amt = Label(tab2, text = "You could borrow: ", font = ("Arial Bold", 12))
+brrw_amt.grid(column = 1, row = 4, padx = 15)
+
+# The button the user clicks to calculate the cost/amount they could borrow
+calculate_btn2 = Button(tab2, text = "Calculate", bg = "red", fg = "white", font = ("Arial", 15))
+calculate_btn2.grid(column = 0, row = 6, sticky = "w", pady = 10)
+
+window.mainloop()
